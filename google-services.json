@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "852093116533",
+    "project_id": "medacrecicla",
+    "storage_bucket": "medacrecicla.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852093116533:android:0ec9121ce74e39a676183c",
+        "android_client_info": {
+          "package_name": "com.test.LoginZad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852093116533-hfq80t4jv6g29b6jfu1r4tf4oliutrmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt2m8ToYjgU9MLRZRLdg9_ykyTEHdhU1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852093116533-hfq80t4jv6g29b6jfu1r4tf4oliutrmi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
