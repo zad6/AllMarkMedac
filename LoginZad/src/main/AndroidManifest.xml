@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.test.LoginZad">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -19,6 +18,10 @@
         <activity
             android:name="com.test.LoginZad.Sesion.LoginActivity"
             android:exported="true" />
+        <activity
+            android:name=".Menu_Principal.Menu_principal"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="true"/>
         <activity
             android:name="com.test.LoginZad.MainActivity"
             android:exported="true">
