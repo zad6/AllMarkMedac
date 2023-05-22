@@ -1,4 +1,4 @@
-package com.test.LoginZad;
+package com.test.LoginZad.Sesion;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.test.LoginZad.R;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.test.LoginZad;
+package com.test.LoginZad.Sesion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.test.LoginZad.R;
+import com.test.LoginZad.Sesion.LoginActivity;
 
 public class DashBoard extends AppCompatActivity {
 

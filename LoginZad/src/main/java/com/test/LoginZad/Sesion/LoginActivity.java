@@ -1,4 +1,4 @@
-package com.test.LoginZad;
+package com.test.LoginZad.Sesion;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.test.LoginZad.R;
 
 public class LoginActivity extends AppCompatActivity {
 //variables para asignarles un objeto
