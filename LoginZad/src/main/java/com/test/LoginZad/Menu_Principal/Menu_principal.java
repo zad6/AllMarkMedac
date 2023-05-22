@@ -1,5 +1,6 @@
 package com.test.LoginZad.Menu_Principal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.test.LoginZad.R;
+import com.test.LoginZad.Sesion.LoginActivity;
 
 public class Menu_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -62,6 +64,8 @@ public class Menu_principal extends AppCompatActivity implements NavigationView.
 
             case R.id.nav_logout:
                 Toast.makeText(this, "Sesión cerrada!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
                 break;
         }
 
