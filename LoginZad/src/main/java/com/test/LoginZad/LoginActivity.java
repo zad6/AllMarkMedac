@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//asigno el objeto a la variable
+        //asigno el objeto a la variable
         txtMail = findViewById(R.id.txtMail);
         txtPassword = findViewById(R.id.txtPassword);
         lblRegister = findViewById(R.id.lblRegister);
@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(view -> {
             userLogin();
         });
-//ejecuto metodo al hacer click
+        //ejecuto metodo al hacer click
         lblRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-//metodo para abrir la ventana del registro
+    //metodo para abrir la ventana del registro
     public void openRegisterActivity() {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);

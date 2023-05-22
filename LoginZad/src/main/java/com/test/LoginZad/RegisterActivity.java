@@ -26,25 +26,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
+    private EditText txtUser;            // Campo de texto para el nombre de usuario
+    private EditText txtMail;            // Campo de texto para el correo electrónico
+    private EditText txtPhone;           // Campo de texto para el número de teléfono
+    private TextInputLayout txtPassword; // Campo de texto para la contraseña
+    private Button btnRegister;          // Botón de registro
+    private TextView lblLogin;           // Etiqueta para iniciar sesión
 
-
-    private EditText txtUser;
-    private EditText txtMail;
-    private EditText txtPhone;
-    private TextInputLayout txtPassword;
-    private Button btnRegister;
-    private TextView lblLogin;
-
-    private String userID;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+    private String userID;               // ID del usuario
+    private FirebaseAuth mAuth;          // Objeto de autenticación de Firebase
+    private FirebaseFirestore db;       // Objeto de base de datos de Firebase
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-//asigno el objeto a la variable
+        // Asignación de los elementos de la interfaz a las variables correspondientes
         txtUser = findViewById(R.id.txtUser);
         txtMail = findViewById(R.id.txtMail);
         txtPhone = findViewById(R.id.txtPhone);
@@ -52,80 +50,83 @@ public class RegisterActivity extends AppCompatActivity {
         lblLogin = findViewById(R.id.lblLogin);
         btnRegister = findViewById(R.id.btnRegister);
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();             // Inicialización del objeto de autenticación
+        db = FirebaseFirestore.getInstance();           // Inicialización del objeto de base de datos
 
+        // Acción al hacer clic en el botón de registro
         btnRegister.setOnClickListener(view -> {
             createuser();
         });
 
-//ejecuto el metodo al hacer click
+        // Acción al hacer clic en la etiqueta de inicio de sesión
         lblLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openLoginActivity();
             }
         });
+    }
 
-    }//End onCreate
-
-
-//metodo para abrir la ventana de login
+    // Método para abrir la actividad de inicio de sesión
     public void openLoginActivity() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-    }// End openLoginActivity
+    }
 
-    public void createuser(){
-
+    // Método para crear un usuario
+    public void createuser() {
         String name = txtUser.getText().toString();
         String mail = txtMail.getText().toString();
         String phone = txtPhone.getText().toString();
         String password = txtPassword.getEditText().getText().toString();
 
-        if (TextUtils.isEmpty(name)){
-            txtMail.setError("Ingrese un Nombre");
-            txtMail.requestFocus();
-        }else if (TextUtils.isEmpty(mail)){
-            txtMail.setError("Ingrese un Correo");
-            txtMail.requestFocus();
-        }else if (TextUtils.isEmpty(phone)){
-            txtMail.setError("Ingrese un Teléfono");
-            txtMail.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
-            txtMail.setError("Ingrese una Contraseña");
-            txtMail.requestFocus();
-        }else {
-
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(mail) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(password)) {
+            // Validación de campos vacíos y muestra de errores en caso necesario
+            if (TextUtils.isEmpty(name)) {
+                txtUser.setError("Ingrese un Nombre");
+                txtUser.requestFocus();
+            } else if (TextUtils.isEmpty(mail)) {
+                txtMail.setError("Ingrese un Correo");
+                txtMail.requestFocus();
+            } else if (TextUtils.isEmpty(phone)) {
+                txtPhone.setError("Ingrese un Teléfono");
+                txtPhone.requestFocus();
+            } else if (TextUtils.isEmpty(password)) {
+                txtPassword.setError("Ingrese una Contraseña");
+                txtPassword.requestFocus();
+            }
+        } else {
+            // Creación de usuario con el correo y contraseña proporcionados
             mAuth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         userID = mAuth.getCurrentUser().getUid();
-                        DocumentReference documentReference = db.collection("users").document(userID);
+                        DocumentReference documentReference = db.collection("usuarios").document(userID);
 
-                        Map<String,Object> user=new HashMap<>();
+                        // Creación de un mapa con los datos del usuario
+                        Map<String, Object> user = new HashMap<>();
                         user.put("Nombre", name);
                         user.put("Correo", mail);
                         user.put("Teléfono", phone);
                         user.put("Contraseña", password);
+                        user.put("Cartera", 0);
 
+                        // Guardado de los datos del usuario en la base de datos
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Log.d("TAG", "onSuccess: Datos registrados"+userID);
+                                Log.d("TAG", "onSuccess: Datos registrados" + userID);
                             }
                         });
+
                         Toast.makeText(RegisterActivity.this, "Usuario Registrado", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                    }else {
-                        Toast.makeText(RegisterActivity.this, "Usuario no registrado"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "Usuario no registrado" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
-
                 }
             });
-
         }
     }
-
-}// End RegisterActivity
+}
