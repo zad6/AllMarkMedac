@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.test.LoginZad.Menu_Principal.Menu_principal;
+import com.test.LoginZad.Sesion.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         if (user == null){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }else{
-            startActivity(new Intent(MainActivity.this, DashBoard.class));
+            startActivity(new Intent(MainActivity.this, Menu_principal.class));
         }
     }
 }

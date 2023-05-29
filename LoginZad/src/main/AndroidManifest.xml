@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.test.LoginZad">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,15 +10,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AllMark">
+
         <activity
-            android:name="com.test.LoginZad.DashBoard"
+            android:name="com.test.LoginZad.Sesion.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name="com.test.LoginZad.RegisterActivity"
+            android:name="com.test.LoginZad.Sesion.LoginActivity"
             android:exported="true" />
         <activity
-            android:name="com.test.LoginZad.LoginActivity"
+            android:name=".Menu_Principal.Menu_principal"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true" />
+
+        <!-- Agregar las meta-data para Google Play Services y la API de Google Shopping -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+        <meta-data
+            android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"
+            android:value="AIzaSyCSr38GGARYPVBQ4D7LDM1P3-uZUKsIk7M" />
+
         <activity
             android:name="com.test.LoginZad.MainActivity"
             android:exported="true">
