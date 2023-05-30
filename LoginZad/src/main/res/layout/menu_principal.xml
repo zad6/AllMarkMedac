@@ -8,7 +8,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
-    tools:context=".Menu_principal">
+    tools:context=".Menu_Principal.Menu_principal">
 
     <LinearLayout
         android:layout_width="match_parent"

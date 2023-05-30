@@ -14,7 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.test.LoginZad.R;
-import com.test.LoginZad.Sesion.LoginActivity;
+import com.test.LoginZad.Sesion.*;
 
 public class Menu_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

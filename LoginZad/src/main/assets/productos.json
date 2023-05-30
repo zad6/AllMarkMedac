@@ -1,0 +1,351 @@
+[
+  {
+    "id": "1",
+    "id_supermercado": "MERCADONA001",
+    "nombre": "Leche",
+    "precio": 199,
+    "marca": "Puleva"
+  },
+  {
+    "id": "2",
+    "id_supermercado": "MERCADONA001",
+    "nombre": "Pan",
+    "precio": 99,
+    "marca": "Bimbo"
+  },
+  {
+    "id": "3",
+    "id_supermercado": "MERCADONA001",
+    "nombre": "Arroz",
+    "precio": 249,
+    "marca": "SOS"
+  },
+  {
+    "id": "4",
+    "id_supermercado": "MERCADONA001",
+    "nombre": "Aceite de oliva",
+    "precio": 399,
+    "marca": "Carbonell"
+  },
+  {
+    "id": "5",
+    "id_supermercado": "MERCADONA001",
+    "nombre": "Café",
+    "precio": 499,
+    "marca": "Marcilla"
+  },
+  {
+    "id": "6",
+    "id_supermercado": "CARREFOUR002",
+    "nombre": "Azúcar",
+    "precio": 149,
+    "marca": "Azucarera"
+  },
+  {
+    "id": "7",
+    "id_supermercado": "CARREFOUR002",
+    "nombre": "Queso",
+    "precio": 299,
+    "marca": "El Caserío"
+  },
+  {
+    "id": "8",
+    "id_supermercado": "CARREFOUR002",
+    "nombre": "Jamón",
+    "precio": 599,
+    "marca": "Cinco Jotas"
+  },
+  {
+    "id": "9",
+    "id_supermercado": "CARREFOUR002",
+    "nombre": "Yogur",
+    "precio": 129,
+    "marca": "Danone"
+  },
+  {
+    "id": "10",
+    "id_supermercado": "CARREFOUR002",
+    "nombre": "Manzanas",
+    "precio": 199,
+    "marca": "Pink Lady"
+  },
+  {
+    "id": "11",
+    "id_supermercado": "LIDL003",
+    "nombre": "Agua",
+    "precio": 79,
+    "marca": "Font Vella"
+  },
+  {
+    "id": "12",
+    "id_supermercado": "LIDL003",
+    "nombre": "Aceitunas",
+    "precio": 199,
+    "marca": "La Española"
+  },
+  {
+    "id": "13",
+    "id_supermercado": "LIDL003",
+    "nombre": "Galletas",
+    "precio": 149,
+    "marca": "Cuétara"
+  },
+  {
+    "id": "14",
+    "id_supermercado": "LIDL003",
+    "nombre": "Chocolate",
+    "precio": 299,
+    "marca": "Nestlé"
+  },
+  {
+    "id": "15",
+    "id_supermercado": "LIDL003",
+    "nombre": "Pasta",
+    "precio": 99,
+    "marca": "Gallo"
+  },
+  {
+    "id": "16",
+    "id_supermercado": "ALCAMPO004",
+    "nombre": "Lechuga",
+    "precio": 99,
+    "marca": "Florette"
+  },
+  {
+    "id": "17",
+    "id_supermercado": "ALCAMPO004",
+    "nombre": "Tomates",
+    "precio": 299,
+    "marca": "Cocktail"
+  },
+  {
+    "id": "18",
+    "id_supermercado": "ALCAMPO004",
+    "nombre": "Pollo",
+    "precio": 599,
+    "marca": "El Pozo"
+  },
+  {
+    "id": "19",
+    "id_supermercado": "ALCAMPO004",
+    "nombre": "Cerveza",
+    "precio": 199,
+    "marca": "Estrella Galicia"
+  },
+  {
+    "id": "20",
+    "id_supermercado": "ALCAMPO004",
+    "nombre": "Pan de molde",
+    "precio": 129,
+    "marca": "Bimbo"
+  },
+  {
+    "id": "21",
+    "id_supermercado": "EROSKI005",
+    "nombre": "Huevos",
+    "precio": 199,
+    "marca": "Camperos"
+  },
+  {
+    "id": "22",
+    "id_supermercado": "EROSKI005",
+    "nombre": "Queso fresco",
+    "precio": 299,
+    "marca": "El Pastor"
+  },
+  {
+    "id": "23",
+    "id_supermercado": "EROSKI005",
+    "nombre": "Pepsi",
+    "precio": 199,
+    "marca": "PepsiCo"
+  },
+  {
+    "id": "24",
+    "id_supermercado": "EROSKI005",
+    "nombre": "Lentejas",
+    "precio": 249,
+    "marca": "La Asturiana"
+  },
+  {
+    "id": "25",
+    "id_supermercado": "EROSKI005",
+    "nombre": "Atún en lata",
+    "precio": 199,
+    "marca": "Calvo"
+  },
+  {
+    "id": "26",
+    "id_supermercado": "DIA006",
+    "nombre": "Papel higiénico",
+    "precio": 299,
+    "marca": "Scottex"
+  },
+  {
+    "id": "27",
+    "id_supermercado": "DIA006",
+    "nombre": "Gel de ducha",
+    "precio": 199,
+    "marca": "Dove"
+  },
+  {
+    "id": "28",
+    "id_supermercado": "DIA006",
+    "nombre": "Detergente",
+    "precio": 249,
+    "marca": "Ariel"
+  },
+  {
+    "id": "29",
+    "id_supermercado": "DIA006",
+    "nombre": "Pan de barra",
+    "precio": 99,
+    "marca": "Dia"
+  },
+  {
+    "id": "30",
+    "id_supermercado": "DIA006",
+    "nombre": "Puré de patatas",
+    "precio": 149,
+    "marca": "Maggi"
+  },
+  {
+    "id": "31",
+    "id_supermercado": "CONSUM007",
+    "nombre": "Naranjas",
+    "precio": 199,
+    "marca": "Navelate"
+  },
+  {
+    "id": "32",
+    "id_supermercado": "CONSUM007",
+    "nombre": "Pimientos",
+    "precio": 299,
+    "marca": "Piquillo"
+  },
+  {
+    "id": "33",
+    "id_supermercado": "CONSUM007",
+    "nombre": "Pasta de dientes",
+    "precio": 199,
+    "marca": "Oral-B"
+  },
+  {
+    "id": "34",
+    "id_supermercado": "CONSUM007",
+    "nombre": "Yogur de fresa",
+    "precio": 99,
+    "marca": "Danone"
+  },
+  {
+    "id": "35",
+    "id_supermercado": "CONSUM007",
+    "nombre": "Mermelada",
+    "precio": 199,
+    "marca": "Hero"
+  },
+  {
+    "id": "36",
+    "id_supermercado": "SUPERSOL008",
+    "nombre": "Patatas",
+    "precio": 149,
+    "marca": "Tucán"
+  },
+  {
+    "id": "37",
+    "id_supermercado": "SUPERSOL008",
+    "nombre": "Refresco de cola",
+    "precio": 199,
+    "marca": "Coca-Cola"
+  },
+  {
+    "id": "38",
+    "id_supermercado": "SUPERSOL008",
+    "nombre": "Detergente líquido",
+    "precio": 299,
+    "marca": "Skip"
+  },
+  {
+    "id": "39",
+    "id_supermercado": "SUPERSOL008",
+    "nombre": "Galletas",
+    "precio": 99,
+    "marca": "María"
+  },
+  {
+    "id": "40",
+    "id_supermercado": "SUPERSOL008",
+    "nombre": "Pan rallado",
+    "precio": 99,
+    "marca": "Bimbo"
+  },
+  {
+    "id": "41",
+    "id_supermercado": "CORTEINGLES009",
+    "nombre": "Perfume",
+    "precio": 5999,
+    "marca": "Chanel"
+  },
+  {
+    "id": "42",
+    "id_supermercado": "CORTEINGLES009",
+    "nombre": "Camiseta",
+    "precio": 1999,
+    "marca": "Zara"
+  },
+  {
+    "id": "43",
+    "id_supermercado": "CORTEINGLES009",
+    "nombre": "Televisor",
+    "precio": 9999,
+    "marca": "Samsung"
+  },
+  {
+    "id": "44",
+    "id_supermercado": "CORTEINGLES009",
+    "nombre": "Cafetera",
+    "precio": 2999,
+    "marca": "Nespresso"
+  },
+  {
+    "id": "45",
+    "id_supermercado": "CORTEINGLES009",
+    "nombre": "Reloj",
+    "precio": 4999,
+    "marca": "Rolex"
+  },
+  {
+    "id": "46",
+    "id_supermercado": "HIPERCOR010",
+    "nombre": "Leche condensada",
+    "precio": 299,
+    "marca": "Nestlé"
+  },
+  {
+    "id": "47",
+    "id_supermercado": "HIPERCOR010",
+    "nombre": "Salchichón",
+    "precio": 399,
+    "marca": "Casa Tarradellas"
+  },
+  {
+    "id": "48",
+    "id_supermercado": "HIPERCOR010",
+    "nombre": "Vino tinto",
+    "precio": 599,
+    "marca": "Marqués de Riscal"
+  },
+  {
+    "id": "49",
+    "id_supermercado": "HIPERCOR010",
+    "nombre": "Puré de verduras",
+    "precio": 249,
+    "marca": "Knorr"
+  },
+  {
+    "id": "50",
+    "id_supermercado": "HIPERCOR010",
+    "nombre": "Champú",
+    "precio": 399,
+    "marca": "Pantene"
+  }
