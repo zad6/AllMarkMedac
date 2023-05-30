@@ -1,4 +1,4 @@
-package com.test.LoginZad;
+package com.test.LoginZad.Ventanas;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.test.LoginZad.R;
 
 //importo dependencias y la aplicación peta cuando runeas
 
