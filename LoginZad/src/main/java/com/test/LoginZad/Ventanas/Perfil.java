@@ -1,6 +1,6 @@
 package com.test.LoginZad.Ventanas;
 
-import androidx.appcompat.app.AppCompatActivity;
+/*import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,5 +52,5 @@ public class Perfil extends AppCompatActivity {
             }
         });
     }
-}
+}*/
 
