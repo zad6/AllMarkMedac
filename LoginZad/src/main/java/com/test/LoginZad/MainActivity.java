@@ -1,14 +1,14 @@
 package com.test.LoginZad;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
 
 import android.content.Intent;
-import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.test.LoginZad.Menu_Principal.Menu_principal;
-import com.test.LoginZad.Sesion.LoginActivity;
+import com.test.LoginZad.Sesion.*;
+import com.test.LoginZad.Menu_Principal.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,4 +31,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, Menu_principal.class));
         }
     }
+
 }

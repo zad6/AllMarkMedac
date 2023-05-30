@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllMark">
         <activity
-            android:name="com.test.LoginZad.Sesion.DashBoard"
-            android:exported="true" />
-        <activity
             android:name="com.test.LoginZad.Sesion.RegisterActivity"
             android:exported="true" />
         <activity
