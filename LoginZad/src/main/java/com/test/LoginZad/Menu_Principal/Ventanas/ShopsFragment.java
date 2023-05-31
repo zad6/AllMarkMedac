@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,27 +17,34 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.test.LoginZad.R;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ShopsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ShopAdapter shopAdapter;
+    private static Map<String, Integer> supermarketImages;
 
     private static class Shop {
         String nombre;
+        String fotoUrl;
 
-        Shop(String nombre) {
+        Shop(String nombre, String fotoUrl) {
             this.nombre = nombre;
+            this.fotoUrl = fotoUrl;
         }
     }
 
     private static class ShopViewHolder extends RecyclerView.ViewHolder {
         TextView tvNombre;
+        ImageView ivFoto;
 
         ShopViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNombre = itemView.findViewById(R.id.text_nombre);
+            ivFoto = itemView.findViewById(R.id.image_foto);
         }
     }
 
@@ -47,8 +55,19 @@ public class ShopsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         shopAdapter = new ShopAdapter();
         recyclerView.setAdapter(shopAdapter);
+        initializeSupermarketImages();
         loadShopsFromFirestore();
         return view;
+    }
+
+    private void initializeSupermarketImages() {
+        supermarketImages = new HashMap<>();
+        supermarketImages.put("Mercadona", R.drawable.mercadona);
+        supermarketImages.put("Carrefour", R.drawable.mercadona);
+        supermarketImages.put("Eroski", R.drawable.eroski);
+        supermarketImages.put("Dia", R.drawable.dia);
+        supermarketImages.put("Lidl", R.drawable.lidl);
+        supermarketImages.put("Alcampo", R.drawable.alcampo);
     }
 
     private void loadShopsFromFirestore() {
@@ -61,7 +80,8 @@ public class ShopsFragment extends Fragment {
                         List<Shop> shopList = new ArrayList<>();
                         for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             String nombre = documentSnapshot.getString("nombre");
-                            shopList.add(new Shop(nombre));
+                            String fotoUrl = documentSnapshot.getString("fotoUrl");
+                            shopList.add(new Shop(nombre, fotoUrl));
                         }
                         shopAdapter.setShopList(shopList);
                     }
@@ -74,8 +94,7 @@ public class ShopsFragment extends Fragment {
                 });
     }
 
-    private class ShopAdapter extends RecyclerView.Adapter<ShopViewHolder> {
-
+    private static class ShopAdapter extends RecyclerView.Adapter<ShopViewHolder> {
         private List<Shop> shopList = new ArrayList<>();
 
         void setShopList(List<Shop> shopList) {
@@ -94,6 +113,16 @@ public class ShopsFragment extends Fragment {
         public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
             Shop shop = shopList.get(position);
             holder.tvNombre.setText(shop.nombre);
+
+            // Obtener el identificador de la imagen del supermercado
+            Integer imagenId = supermarketImages.get(shop.nombre);
+
+            // Configurar la imagen en el ImageView
+            if (imagenId != null) {
+                holder.ivFoto.setImageResource(imagenId);
+            } else {
+                holder.ivFoto.setImageResource(R.drawable.placeholder_image);
+            }
         }
 
         @Override
