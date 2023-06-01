@@ -13,6 +13,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.test.LoginZad.Menu_Principal.Ventanas.AboutFragment;
 import com.test.LoginZad.Menu_Principal.Ventanas.ProfileFragment;
 import com.test.LoginZad.Menu_Principal.Ventanas.ShopsFragment;
@@ -75,6 +78,23 @@ public class Menu_principal extends AppCompatActivity implements NavigationView.
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void getUserData() {
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference usuarioActualRef = FirebaseFirestore.getInstance().collection("usuarios").document(userID);
+
+        usuarioActualRef.get().addOnSuccessListener(documentSnapshot -> {
+            if (documentSnapshot.exists()) {
+                Long cartera = documentSnapshot.getLong("Cartera");
+
+                // Mostrar el valor de la cartera en un componente de tu elección (por ejemplo, un Toast)
+                Toast.makeText(Menu_principal.this, "Valor de la cartera: " + cartera, Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(e -> {
+            // Manejar el error en caso de que no se pueda obtener el valor de la cartera
+            Toast.makeText(Menu_principal.this, "Error al obtener el valor de la cartera", Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
