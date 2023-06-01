@@ -63,7 +63,7 @@ public class ShopsFragment extends Fragment {
     private void initializeSupermarketImages() {
         supermarketImages = new HashMap<>();
         supermarketImages.put("Mercadona", R.drawable.mercadona);
-        supermarketImages.put("Carrefour", R.drawable.mercadona);
+        supermarketImages.put("Carrefour", R.drawable.carrefour);
         supermarketImages.put("Eroski", R.drawable.eroski);
         supermarketImages.put("Dia", R.drawable.dia);
         supermarketImages.put("Lidl", R.drawable.lidl);
