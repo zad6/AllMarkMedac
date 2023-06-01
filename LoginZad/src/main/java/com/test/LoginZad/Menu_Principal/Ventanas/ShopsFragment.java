@@ -28,10 +28,12 @@ public class ShopsFragment extends Fragment {
     private static Map<String, Integer> supermarketImages;
 
     private static class Shop {
+        String id;
         String nombre;
         String fotoUrl;
 
-        Shop(String nombre, String fotoUrl) {
+        Shop(String id, String nombre, String fotoUrl) {
+            this.id = id;
             this.nombre = nombre;
             this.fotoUrl = fotoUrl;
         }
@@ -79,9 +81,10 @@ public class ShopsFragment extends Fragment {
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         List<Shop> shopList = new ArrayList<>();
                         for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            String id = documentSnapshot.getId();
                             String nombre = documentSnapshot.getString("nombre");
                             String fotoUrl = documentSnapshot.getString("fotoUrl");
-                            shopList.add(new Shop(nombre, fotoUrl));
+                            shopList.add(new Shop(id, nombre, fotoUrl));
                         }
                         shopAdapter.setShopList(shopList);
                     }
@@ -94,7 +97,7 @@ public class ShopsFragment extends Fragment {
                 });
     }
 
-    private static class ShopAdapter extends RecyclerView.Adapter<ShopViewHolder> {
+    private class ShopAdapter extends RecyclerView.Adapter<ShopViewHolder> {
         private List<Shop> shopList = new ArrayList<>();
 
         void setShopList(List<Shop> shopList) {
@@ -123,6 +126,17 @@ public class ShopsFragment extends Fragment {
             } else {
                 holder.ivFoto.setImageResource(R.drawable.placeholder_image);
             }
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ProductsFragment productsFragment = ProductsFragment.newInstance(shop.id, shop.nombre);
+                    requireActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, productsFragment)
+                            .addToBackStack(null)
+                            .commit();
+                }
+            });
         }
 
         @Override
