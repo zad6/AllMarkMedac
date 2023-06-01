@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.test.LoginZad.Menu_Principal.Menu_principal;
 import com.test.LoginZad.R;
 
@@ -75,10 +76,22 @@ public class LoginActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        Toast.makeText(LoginActivity.this, "Bienvenid@", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, Menu_principal.class));
-                    }else {
+                    if (task.isSuccessful()) {
+                        FirebaseUser currentUser = mAuth.getCurrentUser();
+                        if (currentUser != null) {
+                            String Contraseña = currentUser.getUid();
+                            String Nombre = "John Doe"; // Aquí deberías obtener el nombre de usuario real desde tu base de datos
+                            String Correo = currentUser.getEmail();
+
+                            Intent intent = new Intent(LoginActivity.this, Menu_principal.class);
+                            intent.putExtra("Contraseña", Contraseña);
+                            intent.putExtra("Nombre", Nombre);
+                            intent.putExtra("Correo", Correo);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(LoginActivity.this, "No se pudo obtener la información del usuario", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
                         Log.w("TAG", "Error:", task.getException());
                     }
                 }
